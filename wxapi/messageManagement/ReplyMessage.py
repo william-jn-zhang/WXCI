@@ -1,4 +1,5 @@
 import xml.dom.minidom as minidom
+from wxapi.FieldName import FieldName
 import time
 
 def __appendChild(dom, root_node, child_name, child_content, use_CDATA=True):
@@ -14,12 +15,12 @@ def __appendChild(dom, root_node, child_name, child_content, use_CDATA=True):
 
 def replyTextMessage(ToUserName, FromUserName, Content):
     dom = minidom.Document()
-    root_node = dom.createElement("xml")
+    root_node = dom.createElement(FieldName.xml)
     dom.appendChild(root_node)
-    __appendChild(dom, root_node, "ToUserName", ToUserName)
-    __appendChild(dom, root_node, "FromUserName", FromUserName)
-    __appendChild(dom, root_node, "CreateTime", time.time(), False)
-    __appendChild(dom, root_node, "MsgType", "text")
-    __appendChild(dom, root_node, "Content", Content)
+    __appendChild(dom, root_node, FieldName.ToUserName, ToUserName)
+    __appendChild(dom, root_node, FieldName.FromUserName, FromUserName)
+    __appendChild(dom, root_node, FieldName.CreateTime, time.time(), False)
+    __appendChild(dom, root_node, FieldName.MsgType, FieldName.text)
+    __appendChild(dom, root_node, FieldName.Content, Content)
     xml_string = root_node.toxml()
     return xml_string

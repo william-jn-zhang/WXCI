@@ -4,6 +4,7 @@ author: william.jn.zhang@gmail.com
 from flask import request
 from wxapi.VerifyServer import verifyServer
 from wxapi.messageManagement.ReceiveMessage import receiveMessage
+from wxapi.FieldName import FieldName
 
 # resolver implement:
 #     extract request xml string
@@ -18,24 +19,24 @@ class BasicResolver:
         nonce = ""
 
         try:
-            signature = request.args.get('signature')
-            timestamp = request.args.get("timestamp")
-            nonce = request.args.get("nonce")
+            signature = request.args.get(FieldName.signature)
+            timestamp = request.args.get(FieldName.timestamp)
+            nonce = request.args.get(FieldName.nonce)
         except KeyError, e:
             print("in file %s, request.args.get() KeyError!" % __file__)
-            return "success"
+            return FieldName.success
 
         # verify wechat server
         if signature == "":
-            return "success"
+            return FieldName.success
         verify = verifyServer(signature, timestamp, nonce)
         if not verify:
             print("in file %s, verify failed!" % __file__)
-            return "success"
+            return FieldName.success
         if request.data == "":
             echostr = ""
             try:
-                echostr = request.args.get("echostr")
+                echostr = request.args.get(FieldName.echostr)
             except KeyError, e:
                 print("in file %s, request.args.get(echostr) failed" % __file__)
             return echostr
@@ -49,4 +50,4 @@ class BasicResolver:
         return
 
     def call_controller(self, msg_dict):
-        return self.controller.handler_entity(msg_dict)
+        return self.controller.handle_entity(msg_dict)
