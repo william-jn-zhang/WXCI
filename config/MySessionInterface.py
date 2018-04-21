@@ -1,7 +1,7 @@
 import json
 from flask.sessions import SessionInterface
 from flask.sessions import SessionMixin
-from entity.message import entity_message
+from wxapi.messageManagement.ReceiveMessage import receiveMessage
 
 class MySession(dict, SessionMixin):
     def __init__(self, initial=None, sid=None):
@@ -24,7 +24,7 @@ class MySessionInterface(SessionInterface):
     container = {}
 
     def open_session(self, app, request):
-        msg_dict = entity_message.handle_message(request.data)
+        msg_dict = receiveMessage(request.data)
         userId = msg_dict['FromUserName']
         session_json_str = self.container.get(userId)
         if session_json_str is not None:

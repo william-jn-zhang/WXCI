@@ -1,3 +1,4 @@
+#coding=utf8
 '''
 author: william.jn.zhang@gmail.com
 '''
@@ -7,6 +8,7 @@ from layer.controller.ChatController import SessionControlFields
 from layer.controller.ChatController import sig_c
 from wxapi.messageManagement.ReplyMessage import replyTextMessage
 from wxapi.FieldName import FieldName
+from app import *
 
 class ChatCaller:
 
@@ -14,7 +16,7 @@ class ChatCaller:
 
         INSTR_LISTAPP = "listapp"
 
-        def get_applist():
+        def get_applist(self):
             applist_str = u"以下app可以使用：\n"
             for (k, (c, d)) in APPS.items():
                 applist_str += (k + ": " + d) + "\n"
@@ -49,7 +51,7 @@ class ChatCaller:
             content = entity_dict[FieldName.Content]
             content = content.strip()
             if content not in APPS.keys():
-                ccs = ChatCallerShell()
+                ccs = ChatCaller.ChatCallerShell()
                 return ccs.do(entity_dict)
             else: #  open app
                 session[SessionControlFields.CURRENT_APP_KEY] = content
@@ -62,7 +64,7 @@ class ChatCaller:
         # entering the app
         current_app_key = session[SessionControlFields.CURRENT_APP_KEY]
         app_class = APPS[current_app_key][0]
-        module_name = APP_MODULE_PATH + app_class
+        module_name = APP_MODULE_PATH + "." + app_class
         app_obj = self.createAppInstance(module_name, app_class)
         rep_str = app_obj.do(session[SessionControlFields.APP_SESSION], entity_dict)
         if app_obj.LABEL_EXIT:

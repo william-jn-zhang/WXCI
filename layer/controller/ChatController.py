@@ -23,7 +23,7 @@ def sig_c(session):
 
 class ChatController:
     SIG_MARKER = "$"
-    SIG_C = "C"
+    SIG_C = "c"
 
     def set_caller(self, Caller):
         self.caller = Caller
@@ -43,6 +43,10 @@ class ChatController:
                     sig_c(session)
                     return FieldName.success
                 # add signals here
+
+        if SessionControlFields.CURRENT_APP_KEY not in session:
+            new_app_session(session)
+
         '''
         session duration check can add here
         '''
