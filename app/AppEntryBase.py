@@ -1,6 +1,6 @@
 
 class AppEntryBase:
-
+    LABEL_EXIT = False
     # implement this method
     def do(self, session, request_dict):
         pass

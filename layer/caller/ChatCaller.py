@@ -8,7 +8,6 @@ from layer.controller.ChatController import SessionControlFields
 from layer.controller.ChatController import sig_c
 from wxapi.messageManagement.ReplyMessage import replyTextMessage
 from wxapi.FieldName import FieldName
-from app import *
 
 class ChatCaller:
 
@@ -41,8 +40,9 @@ class ChatCaller:
                 )
 
     def createAppInstance(self, module_name, class_name, *args, **kwargs):
-        module_meta = __import__(module_name, globals(), locals(), [class_name])
+        module_meta = __import__(module_name)
         class_meta = getattr(module_meta, class_name)
+        class_meta = getattr(class_meta, class_name)
         obj = class_meta(*args, **kwargs)
         return obj
 
