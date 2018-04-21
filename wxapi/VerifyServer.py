@@ -1,5 +1,5 @@
 import hashlib
-from config.cfg import VERIFY_TOKEN
+from config.secret import VERIFY_TOKEN
 
 def verifyServer(signature, timestamp, nonce):
     token = VERIFY_TOKEN
