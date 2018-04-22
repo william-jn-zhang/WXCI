@@ -1,2 +1,261 @@
  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
 182.254.86.145 - - [21/Apr/2018 19:54:44] "POST /?signature=19e955e90ffbf9b8e1fcd3b799f3a33ea0818ff3&timestamp=1524311684&nonce=806175971&openid=omuX80sGFftRoh18zOhEXDwjmx6U HTTP/1.1" 200 -
+107.170.232.29 - - [21/Apr/2018 20:03:51] "GET / HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+218.208.172.239 - - [21/Apr/2018 22:03:00] "GET / HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+118.189.199.142 - - [21/Apr/2018 22:05:20] "GET / HTTP/1.0" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+114.215.45.79 - - [22/Apr/2018 01:47:06] "GET / HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+222.186.58.108 - - [22/Apr/2018 08:30:35] "GET / HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+222.186.58.108 - - [22/Apr/2018 08:30:35] "GET /index.action HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+59.110.6.177 - - [22/Apr/2018 09:40:58] "GET / HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+106.120.63.79 - - [22/Apr/2018 09:57:59] "GET /cgi-bin/user/Config.cgi?.cab&action=get&category=Account.* HTTP/1.1" 500 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 270, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in execute
+    application_iter = app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 1978, in wsgi_app
+    ctx.push()
+  File "/usr/lib/python2.7/site-packages/flask/ctx.py", line 332, in push
+    self.session = self.app.open_session(self.request)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 912, in open_session
+    return self.session_interface.open_session(self, request)
+  File "/home/william/server/newwx/config/MySessionInterface.py", line 27, in open_session
+    msg_dict = receiveMessage(request.data)
+  File "/home/william/server/newwx/wxapi/messageManagement/ReceiveMessage.py", line 24, in receiveMessage
+    xml.sax.parseString(xmlString, handler)
+  File "/usr/lib64/python2.7/xml/sax/__init__.py", line 49, in parseString
+    parser.parse(inpsrc)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 107, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+  File "/usr/lib64/python2.7/xml/sax/xmlreader.py", line 125, in parse
+    self.close()
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 220, in close
+    self.feed("", isFinal = 1)
+  File "/usr/lib64/python2.7/xml/sax/expatreader.py", line 214, in feed
+    self._err_handler.fatalError(exc)
+  File "/usr/lib64/python2.7/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+SAXParseException: <unknown>:1:0: no element found
+182.254.86.145 - - [22/Apr/2018 10:43:59] "POST /?signature=fbb8717d0992c0b28584ae7805e9786e8db476b6&timestamp=1524365039&nonce=430938958&openid=omuX80sGFftRoh18zOhEXDwjmx6U HTTP/1.1" 200 -
+182.254.86.150 - - [22/Apr/2018 10:44:27] "POST /?signature=09fa7bf84ca38a33536fc6218fb216f8f69626bf&timestamp=1524365067&nonce=748656177&openid=omuX80sGFftRoh18zOhEXDwjmx6U HTTP/1.1" 200 -
+182.254.86.142 - - [22/Apr/2018 10:44:31] "POST /?signature=280c6f9a8d3e861e99ec3bdfdaa458acbdff964b&timestamp=1524365071&nonce=607125831&openid=omuX80sGFftRoh18zOhEXDwjmx6U HTTP/1.1" 200 -

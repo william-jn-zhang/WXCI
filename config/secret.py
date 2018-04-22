@@ -1,1 +1,1 @@
-VERIFY_TOKEN = "william"
+VERIFY_TOKEN = "your token"
