@@ -16,11 +16,17 @@ class StartStateHandler(BasicStateHandler):
             content = msg_dict[FieldName.Content]
             content = content.strip()
             if content == "help":
-                return (self.name, u"回复学生ID，回复finish完成统计，回复delpre删除上一条记录")
+                return (self.name, u"回复学生ID，回复finish完成统计，回复delpre删除上一条记录，回复display显示已统计数据。")
             if content == "delpre":
                 (stuId, score) = session['score_list'].pop(len(session['score_list']) - 1)
                 session['stuId'] = ""
                 return (self.name, u"删除记录：" + str(stuId) + "," + str(score))
+            if content == "display":
+                display_str = ""
+                for (stuId, score) in session['score_list']:
+                    display_str += (str(stuId) + "," + str(score) + "\n")
+                display_str += " "
+                return (self.name, display_str)
             if content == "finish":
                 return ("finish", u"统计完毕！")
             try:

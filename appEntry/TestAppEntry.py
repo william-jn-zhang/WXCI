@@ -1,4 +1,4 @@
-from app.AppEntryBase import AppEntryBase
+from appEntry.AppEntryBase import AppEntryBase
 from wxapi.messageManagement.ReplyMessage import replyTextMessage
 from wxapi.FieldName import FieldName
 

@@ -43,6 +43,7 @@ class BasicResolver:
 
         # resolve request
         msg_dict = receiveMessage(request.data)
+        print("in file %s, %s" % (__file__, str(msg_dict)))
         return self.call_controller(msg_dict)
 
     def set_controller(self, Controller):

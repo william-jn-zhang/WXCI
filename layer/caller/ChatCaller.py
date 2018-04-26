@@ -23,15 +23,16 @@ class ChatCaller:
             return applist_str
 
         def do(self, entity_dict):
-            content = entity_dict[FieldName.Content]
-            content = content.strip()
-            if content == self.INSTR_LISTAPP:
-                applist_str = self.get_applist()
-                return replyTextMessage(
-                        entity_dict[FieldName.FromUserName],
-                        entity_dict[FieldName.ToUserName],
-                        applist_str
-                    )
+            if entity_dict[FieldName.MsgType] == FieldName.text:
+                content = entity_dict[FieldName.Content]
+                content = content.strip()
+                if content == self.INSTR_LISTAPP:
+                    applist_str = self.get_applist()
+                    return replyTextMessage(
+                            entity_dict[FieldName.FromUserName],
+                            entity_dict[FieldName.ToUserName],
+                            applist_str
+                        )
 
             return replyTextMessage(
                     entity_dict[FieldName.FromUserName],
@@ -46,13 +47,18 @@ class ChatCaller:
         obj = class_meta(*args, **kwargs)
         return obj
 
+    def run_chatshell(self, entity_dict):
+        ccs = ChatCaller.ChatCallerShell()
+        return ccs.do(entity_dict)
+
     def handle_call(self, session, entity_dict):
         if session[SessionControlFields.CURRENT_APP_KEY] is None:
+            if entity_dict[FieldName.MsgType] != FieldName.text:
+                return self.run_chatshell(entity_dict)
             content = entity_dict[FieldName.Content]
             content = content.strip()
             if content not in APPS.keys():
-                ccs = ChatCaller.ChatCallerShell()
-                return ccs.do(entity_dict)
+                return self.run_chatshell(entity_dict)
             else: #  open app
                 session[SessionControlFields.CURRENT_APP_KEY] = content
                 rep_str = u"进入应用：" + content
