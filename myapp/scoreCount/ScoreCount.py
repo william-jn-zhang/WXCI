@@ -1,5 +1,6 @@
 #coding=utf-8
 from myapp.scoreCount.utils.FSM import FSM
+from myapp.scoreCount.InitStateHandler import InitStateHandler
 from myapp.scoreCount.StartStateHandler import StartStateHandler
 from myapp.scoreCount.ScoreStateHandler import ScoreStateHandler
 from myapp.scoreCount.FinishStateHandler import FinishStateHandler
@@ -9,13 +10,15 @@ import pickle
 
 def __create_new_fsm():
     fsm = FSM()
+    init = InitStateHandler()
     start = StartStateHandler()
     score = ScoreStateHandler()
     finish = FinishStateHandler()
+    fsm.regist_state_handler(init)
     fsm.regist_state_handler(start)
     fsm.regist_state_handler(score)
     fsm.regist_state_handler(finish)
-    fsm.set_state("start")
+    fsm.set_state("init")
     return fsm
 
 def scoreCount(session, msg_dic):
