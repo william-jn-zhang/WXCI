@@ -4,7 +4,7 @@ class NamelistDocxReader:
 
     param_skip_row_num_head = 6
     param_skip_row_num_tail = 1
-    param_extract_cols = [0, 1, 2]
+    param_extract_cols = [0, 1, 3]
 
     def extract(self, docxfile):
         document = Document(docxfile)

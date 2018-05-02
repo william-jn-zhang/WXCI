@@ -33,5 +33,11 @@ class StartStateHandler(BasicStateHandler):
                 int(content)
             except Exception, e:
                 return (self.name, u"请告诉我学号，统计完毕回复finish")
+            ret = None
+            if "name_list" in session:
+                namelist = session["name_list"]
+                stuId = "2017" + str(content)
+                if stuId in namelist:
+                    ret = str(namelist[stuId])
             session['stuId'] = content
-            return ("score", None)
+            return ("score", ret)

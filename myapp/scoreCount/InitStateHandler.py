@@ -18,6 +18,8 @@ class InitStateHandler(BasicStateHandler):
         if content == "loadnamelist":
             nr = NamelistDocxReader()
             nl = nr.extract(self.namelistpath)
+            #print("in file %s" % __file__)
+            #print(nl)
             nl_dict = {}
             for (seq, id, name) in nl:
                 id = str(int(id))
